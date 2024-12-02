@@ -1,75 +1,109 @@
 # QR Code Generator
 
-This project is a simple tool that generates a QR code from a specific URL.
+This project is a simple tool to generate QR codes from a specific URL and includes both a web interface and a Flask backend for dynamic QR code generation.
 
 ## 🛠️ Features
 
-- Generates QR codes from a given URL.
-- Basic customization of QR code size and border.
-- Saves the QR code as an image (`.png`).
+- Generate QR codes from a provided URL.
+- Customizable QR code appearance (size and border).
+- Web interface for generating and downloading QR codes.
+- Backend server to dynamically generate and return QR codes via API.
 
-## 🚀 Installation and Usage
+---
 
-1. Clone this repository:
-   ```bash
+## 🚀 Installation and Deployment
+
+Follow these steps to set up and deploy the project:
+
+### Frontend Deployment
+
+1. Clone the repository:
    git clone https://github.com/ICaesarI/qr-code-generator.git
    cd qr-code-generator
-   ```
 
-2. (Optional) Create and activate a virtual environment:
-   ```bash
+2. Open the `index.html` file in a browser to access the web interface.
+
+   The web interface includes:
+   - A field to input a URL.
+   - A button to generate a QR code.
+   - An option to download the generated QR code as an image.
+
+---
+
+### Backend Deployment
+
+1. Create and activate a virtual environment (optional but recommended):
    python -m venv .venv
    source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   ```
 
-3. Install the dependencies:
-   ```bash
+2. Install the required Python packages:
    pip install -r requirements.txt
-   ```
 
-4. Edit the URL in the `generate_qr.py` file to customize the link for the QR code.
+3. Run the backend server:
+   python app.py
 
-5. Run the script:
-   ```bash
-   python generate_qr.py
-   ```
+4. Access the backend at `http://localhost:5000`. Use the `/generate_qr` endpoint to dynamically create QR codes.
 
-   This will generate an image file named `mi_qr.png` in the project folder.
+---
+
+## 📋 Example Usage of the Backend
+
+To generate a QR code via API:
+
+1. Make a `POST` request to:
+   http://localhost:5000/generate_qr
+
+2. Send the following JSON payload:
+   {
+       "url": "https://example.com",
+       "size": 10,
+       "border": 2
+   }
+
+3. The server responds with a QR code image. Save or display it as needed.
+
+---
 
 ## 📂 Project Structure
 
 ```plaintext
 qr-code-generator/
 ├── .gitignore
+├── LICENSE
 ├── README.md
+├── index.html
+├── page/
+│   ├── img/
+│   │   ├── github.png
+│   │   └── logo.jpg
+│   ├── js/
+│   │   └── qrcode.js
+│   └── style/
+│       └── style.css
 ├── qr_generator/
+│   ├── generate_qr.py
 │   └── mi_qr.png
-│   └── generate_qr.py
 └── requirements.txt
-
 ```
 
-## ⚙️ Dependencies
+---
 
-This project uses the following library:
-- `qrcode[pil]`
+## 📦 Requirements
 
-Install all dependencies with:
-```bash
-pip install -r requirements.txt
-```
+The project requires the following:
+- Python 3.8 or higher.
+- Flask (installed via `requirements.txt`).
+- A web browser to run the frontend.
 
-## 📋 Notes
-
-- Adjust the `box_size` and `border` values in the script to customize the QR code appearance.
-- The generated image will be saved as `mi_qr.png`.
+---
 
 ## 🖼️ QR Code Example
 ![QR Code Example](qr_generator/mi_qr.png)
 
+---
+
 ## 📧 Contact
 
-- **LinkedIn:** [Cesar Gonzalez](https://www.linkedin.com/in/cesar-gonzalez-anaya/)
-- **Github:** [cesar.gonzalez6194@alumnos.udg.mx](https://github.com/ICaesarI)
+If you have any questions or suggestions, feel free to reach out to:
 - **Email:** cesar.gonzalez6194@alumnos.udg.mx
-
+- **GitHub:** https://github.com/ICaesarI

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qr Generator</title>
+    <link href="style/style.css" rel="stylesheet"> <!-- Enlace a la hoja de estilo externa -->
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navegacion">
+            <a class="navegacion__imagen" href="index.html">
+                <img src="img/Logo.jpg" alt="logo_principal">
+            </a>
+
+            <div class="navegacion__nombre__principal">
+                <h1 class="navegacion__nombre">Qr Code Generator</h1>
+                <a href="https://github.com/ICaesarI" class="caesar-link">
+                    <p>Caesar Code</p>
+                </a>
+                
+            </div>
+
+            <a class="navegacion__github" href="https://github.com/ICaesarI/QR_Code_Generator">
+                <img src="img/GitHub.png" alt="logo__github">
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Mostrar el código QR generado -->
+        <img id="qr-image" style="display:none;" alt="Código QR Generado">
+
+        <!-- Input para ingresar la URL -->
+        <input id="url-input" type="url" placeholder="Input URL" required>
+        <div class="botones__generar__descarga">
+            <input class="boton__generarQr" type="button" value="Generate Qr" onclick="generateQR()">
+            <input class="boton__descargar" type="button" value="Download Qr" onclick="downloadQR()" disabled>
+        </div>
+
+        <!-- Descargar el QR generado -->
+        <div id="download-link">
+            <!-- Enlace de descarga será generado por JavaScript -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">© 2024 QR Code Generator. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Importar el script de generación de QR -->
+    <script src="js/qrcode.js"></script>
+
+</body>
+</html>

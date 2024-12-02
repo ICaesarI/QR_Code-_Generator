@@ -1,0 +1,264 @@
+:root {
+    /* Color Principal*/
+    --colorPrincipalFondo: #001024;
+
+    /*Colores Genericos*/
+    --blanco: #ffffff;
+    --colorBoton: #001024;   /* Color de los botones */
+    --colorBotonHover: #003a7a;  /* Color del boton cuando pasa el ratón */
+}
+
+html {
+    /*---------------------------------------------------------------------------------------------*/
+    /*Lineas que deben de estar en todos nuestros proyectos*/
+    box-sizing: border-box;     /*Para que el border el padding no altere el ancho de los elementos*/
+    font-size: 62.5%;           /*1rem = 10px*/
+    height: 100%;              /* Asegura que la página ocupe todo el alto de la ventana */
+    display: flex;
+    flex-direction: column;    /* Para usar flexbox y asegurarse que el footer esté abajo */
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 2;
+    margin: 0;
+    display: flex;
+    flex-direction: column;  /* Flexbox para la distribución */
+    flex: 1;  /* Permite que el contenido principal crezca para llenar el espacio disponible */
+}
+
+/**  Globales   **/
+.contenedor {
+    width: min(90%, 120rem);
+    margin: 0 auto;                     /*Necesario para centrar el contenido - Horizontalmente*/
+}
+
+a {
+    text-decoration: none;              /*Quitar el interlineado a los links*/
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuenteHeading);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+h4 {
+    font-size: 2.8rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+/**  Utilidades   **/
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.centrar-texto {
+    text-align: center;
+}
+
+/** Navegacion **/
+.navegacion {
+    background-color: var(--colorPrincipalFondo);
+    height: 60 rem;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.navegacion__imagen {
+    margin-top: 1rem;
+    width: 75px;
+    height: auto;
+    max-width: 100%;
+    display: block; /* Elimina espacios blancos alrededor de la imagen si es necesario */
+}
+
+.navegacion__github {
+    margin-top: 1rem;
+    width: 50px;
+    height: auto;
+    max-width: 100%;
+    display: block; /* Elimina espacios blancos alrededor de la imagen si es necesario */
+}
+
+.navegacion__nombre__principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--blanco);
+}
+
+.navegacion__nombre {
+    margin-bottom: 1rem;
+}
+
+/** Main **/
+main {
+    flex: 1; /* Hace que el contenido principal ocupe el espacio disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/** Estilo del input URL **/
+#url-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 1rem 0;
+    font-size: 1.6rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.boton__descargar, .boton__generarQr {
+    padding: 10px 20px;
+    font-size: 1.6rem;
+    background-color: var(--colorBoton);
+    color: var(--blanco);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton__descargar:hover, .boton__generarQr:hover {
+    background-color: var(--colorBotonHover);
+}
+
+/** Footer **/
+.footer {
+    background-color: var(--colorPrincipalFondo);
+    color: var(--blanco);
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: auto; /* Asegura que el footer se quede al final */
+}
+
+.footer__texto {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+/* Media Queries para hacer la página responsive */
+
+/* Para pantallas más pequeñas que 768px (tabletas y móviles pequeños) */
+@media (max-width: 768px) {
+    .navegacion {
+        flex-direction: column;  /* Cambia la navegación a columna */
+        height: auto;  /* Ajusta la altura de la barra de navegación */
+        align-items: center;
+        padding: 1rem 0;  /* Reduce el espacio en los laterales */
+    }
+
+    .navegacion__nombre__principal {
+        text-align: center;
+    }
+
+    .boton__descargar, .boton__generarQr {
+        width: 100%;  /* Hace que los botones ocupen todo el ancho */
+        padding: 12px 0;
+        margin: 1rem 0;
+    }
+
+    #url-input {
+        max-width: 100%;  /* Hace que el input ocupe todo el ancho */
+    }
+
+    .footer {
+        padding: 1.5rem;
+    }
+}
+
+/* Para pantallas más pequeñas que 480px (móviles pequeños) */
+@media (max-width: 480px) {
+    .navegacion__imagen {
+        width: 50px;  /* Reduce el tamaño del logo */
+    }
+
+    .navegacion__nombre {
+        font-size: 2rem;  /* Ajusta el tamaño de la fuente */
+    }
+
+    h1 {
+        font-size: 3rem;  /* Reduce el tamaño de la fuente de h1 */
+    }
+
+    h2 {
+        font-size: 2.5rem;  /* Reduce el tamaño de h2 */
+    }
+
+    #url-input {
+        font-size: 1.4rem;  /* Ajusta el tamaño de la fuente del input */
+    }
+
+    .boton__descargar, .boton__generarQr {
+        font-size: 1.4rem;  /* Ajusta el tamaño de los botones */
+    }
+
+    .footer__texto {
+        font-size: 1.2rem;  /* Ajusta el tamaño del texto del footer */
+    }
+}
+
+/* Efecto de hover en los iconos (Logo y GitHub) */
+.navegacion__imagen, .navegacion__github {
+    transition: transform 0.3s ease; /* Añadimos transición suave */
+}
+
+/* Agrandar los iconos al pasar el ratón */
+.navegacion__imagen:hover, .navegacion__github:hover {
+    transform: scale(1.1); /* Agranda el icono al 110% */
+}
+/* Estilo para el enlace "Caesar Code" */
+.caesar-link {
+    text-decoration: none;  /* Quitar subrayado por defecto */
+    color: var(--blanco);   /* Color del texto, puedes cambiarlo a otro color si lo prefieres */
+    font-size: 1.8rem;      /* Tamaño de fuente */
+    font-weight: bold;      /* Hacer el texto en negrita */
+    transition: color 0.3s ease, transform 0.3s ease;  /* Transición suave para el color y el tamaño */
+}
+.caesar-link:hover {
+    transform: scale(1.1);     /* Aumenta el tamaño del texto */
+}
+
+.caesar-link p {
+    margin: 0; /* Elimina el margen por defecto del párrafo */
+    padding: 0; /* Elimina el padding si lo tiene */
+}
+
+/* Ocultar el botón de descarga por defecto */
+.boton__descargar {
+    display: none;
+}
+
+/* Mostrarlo cuando el QR sea generado */
+.boton__descargar.show {
+    display: inline-block;
+}
