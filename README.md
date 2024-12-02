@@ -104,6 +104,6 @@ The project requires the following:
 
 ## 📧 Contact
 
-If you have any questions or suggestions, feel free to reach out to:
+- **LinkedIn:** [Cesar Gonzalez](https://www.linkedin.com/in/cesar-gonzalez-anaya/)
+- **Github:** [ICaesarI](https://github.com/ICaesarI)
 - **Email:** cesar.gonzalez6194@alumnos.udg.mx
-- **GitHub:** https://github.com/ICaesarI
